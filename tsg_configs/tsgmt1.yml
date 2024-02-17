@@ -11,8 +11,8 @@ input_json: data/cocobu.json
 input_label_h5: data/cocobu_label.h5
 input_att_dir: data/cocobu_att
 input_rela_dir: data/coco_pred_sg
-seq_per_img: 5
-batch_size: 14
+seq_per_img: 2
+batch_size: 1
 learning_rate: 0.0005
 reduce_on_plateau: false
 

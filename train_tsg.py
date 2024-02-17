@@ -79,7 +79,7 @@ def train(opt):
     # Build model
     ##########################
     opt.vocab = loader.get_vocab()
-    model = models.setup(opt).cuda()
+    model = models.setup(opt)
     del opt.vocab
     if opt.start_from is not None:
         model.load_state_dict(torch.load(os.path.join(
@@ -332,5 +332,5 @@ def train(opt):
 
 opt = opts.parse_opt()
 os.environ["CUDA_VISIBLE_DEVICES"]=str(opt.gpu)
-# torch.cuda.set_device(opt.gpu)
+torch.cuda.set_device(opt.gpu)
 train(opt)
